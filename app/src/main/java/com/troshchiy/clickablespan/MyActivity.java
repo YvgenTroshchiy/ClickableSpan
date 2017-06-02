@@ -18,11 +18,17 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
         textView = (TextView) findViewById(R.id.textView);
 
-        String text = "Some text [clickable] and [ttaralya]";
-        int i1 = text.indexOf("[");
-        int i2 = text.indexOf("]");
+        String text1 = "Some text ";
+        String text2 = "Link Here";
+        String text3 = " Other other text";
+
+        String allText = text1 + text2 + text3;
+
+        int i1 = text1.length();
+        int i2 = text1.length() + text2.length();
+
         textView.setMovementMethod(LinkMovementMethod.getInstance());
-        textView.setText(text, TextView.BufferType.SPANNABLE);
+        textView.setText(allText, TextView.BufferType.SPANNABLE);
 
         Spannable spannable = (Spannable) textView.getText();
         ClickableSpan clickableSpan = new ClickableSpan() {
