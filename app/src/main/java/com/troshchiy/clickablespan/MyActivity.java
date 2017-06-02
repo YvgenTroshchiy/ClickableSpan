@@ -30,12 +30,13 @@ public class MyActivity extends Activity {
         textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setText(allText, TextView.BufferType.SPANNABLE);
 
-        Spannable spannable = (Spannable) textView.getText();
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override public void onClick(View widget) {
                 Toast.makeText(MyActivity.this, "Click", Toast.LENGTH_SHORT).show();
             }
         };
+
+        Spannable spannable = (Spannable) textView.getText();
         spannable.setSpan(clickableSpan, i1, i2 + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 }
